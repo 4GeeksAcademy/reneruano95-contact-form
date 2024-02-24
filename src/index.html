@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Contact Form</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -11,18 +11,72 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-4 offset-4">
+          <h1>Contact Form</h1>
+
+          <div class="mb-3">
+            <label for="name-input" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name-input" />
+          </div>
+
+          <div class="mb-3">
+            <label for="email-input" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email-input"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message-input" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="message-input"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn-success" id="send-info">
+              Send info
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="..." />
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">
+          Message Sent!!!
+        </div>
       </div>
     </div>
   </body>
